@@ -530,10 +530,38 @@ git tag step4
 
 Add the following features to the TODOs app:
 
-* Add the properties `createdAt` and `lastUpdatedAt` to the `Todo` schema with a type of `Date`.  Set the `createdAt` value in the `CREATE` logic of the TODO router and set the `lastUpdatedAt` value in the `UPDATE` logic of the TODO router. Add the display of these values to the TODO's `show.ejs` view.
+* Add the properties `createdAt` and `lastUpdatedAt` to the `Todo` schema with a type of `Date`.  Set the `createdAt` value in the `CREATE` logic of the TODO router and set the `lastUpdatedAt` value in the `UPDATE` logic of the TODO router. Add the display of these values to the TODO's `SHOW` view and set the display order in the TODO's `INDEX` view to descending by `createdAt`. See [this Stack Overflow answer](http://stackoverflow.com/questions/5825520/in-mongoose-how-do-i-sort-by-date-node-js#answer-15081087) for how to sort using `mongoose`.
 
 * Convert the display of the `completed` field to a checkbox using either the HTML checkbox input control or using icons such as the Twitter Bootstrap's `glyphicon-ok` and `glyphicon-unchecked` icons.
 
 * Add a toggle feature to the Todo Index view so that you can complete or un-complete a Todo from the index page. For this feature you will need to add a new route to the Todo router, such as `GET /todos/:id/toggle`.
+
+* Convert the views from EJS to Jade. You can use [this website](http://html2jade.org/) but note that it will not recognize the `ejs` code inside the `html`. Also, you will need to change the following in `app.js`:
+
+```javascript
+// app.set('view engine', 'ejs');     // comment out this line
+app.set('view engine', 'jade');       // add this line
+```
+
+and make this change in `package.json`:
+
+```json
+    "ejs": "~2.3.1",                  // remove this line
+    "jade": "~1.9.2",                 // add this line
+```
+
+Here is a comparison of `ejs` to `jade`:
+
+```html
+  <h1><%= title %></h1>
+  <p>Welcome to <%= title %></p>
+```
+
+```jade
+  h1= title
+  p Welcome to #{title}
+```
+
+* DRY up the views by using a layout - requires converting to `Jade` or using a library such as `ejs-express-layouts`.
 
 * Add some CSS to make it pretty.
