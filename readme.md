@@ -3,7 +3,7 @@
 This app was developed as part of the General Assembly WDI class in Atlanta, GA.
 
 * Author: Dr. Mike Hopper
-* Date: February, 2016
+* Date: May, 2016
 
 # Steps To Reproduce
 
@@ -535,3 +535,5 @@ Add the following features to the TODOs app:
 * Convert the display of the `completed` field to a checkbox using either the HTML checkbox input control or using icons such as the Twitter Bootstrap's `glyphicon-ok` and `glyphicon-unchecked` icons.
 
 * Add a toggle feature to the Todo Index view so that you can complete or un-complete a Todo from the index page. For this feature you will need to add a new route to the Todo router, such as `GET /todos/:id/toggle`.
+
+* Add some CSS to make it pretty.
