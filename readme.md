@@ -1,4 +1,4 @@
-# A Simple TODO app using Express, Mongoose, and MongoDB
+# A Simple TODO app using the MEAN Stack and the Express Generator
 
 This app was developed as part of the General Assembly WDI class in Atlanta, GA.
 
