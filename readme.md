@@ -46,6 +46,15 @@ mongoose.connect('mongodb://localhost/todos');
   },
 ```
 
+1d. Test it out
+
+```bash
+echo '#!/bin/bash' > run.bash
+echo 'DEBUG=todos:* npm start' >> run.bash
+chmod u+x run.bash
+./run.bash
+```
+
 
 1e. Create git repository for project:
 
@@ -513,9 +522,6 @@ touch views/todos/edit.ejs
 4j. Test it out:
 
 ```bash
-echo '#!/bin/bash' > run.bash
-echo 'DEBUG=todos:* npm start' >> run.bash
-chmod u+x run.bash
 ./run.bash
 ```
 
