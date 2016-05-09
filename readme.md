@@ -18,6 +18,7 @@ This app was developed as part of the General Assembly WDI class in Atlanta, GA.
 1a. Use the `express generator` to generate the project
 
 ```bash
+npm install -g express-generator
 express --ejs todos
 cd todos && npm install
 ```
