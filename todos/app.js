@@ -7,12 +7,14 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var methodOverride = require('method-override');
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
+// Routes
+var homeRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
 var todosRouter = require('./routes/todos');
 
 var app = express();
 
+// Connect to database
 mongoose.connect('mongodb://localhost/todos');
 
 // view engine setup
@@ -21,15 +23,15 @@ app.set('view engine', 'ejs');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
+app.use(logger('combined'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
-app.use('/users', users);
+app.use('/', homeRouter);
+app.use('/users', usersRouter);
 app.use('/todos', todosRouter);
 
 // catch 404 and forward to error handler
@@ -63,5 +65,6 @@ app.use(function(err, req, res, next) {
   });
 });
 
+console.log('Running in %s mode', app.get('env'));
 
 module.exports = app;

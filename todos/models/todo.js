@@ -3,7 +3,9 @@ var mongoose = require('mongoose');
 var TodoSchema = new mongoose.Schema({
   title:         { type: String,  required: true },
   completed:     { type: Boolean, required: true }
-}, { timestamps: true });  // createdAt, updatedAt
+  },
+  { timestamps: true }  // createdAt, updatedAt
+);
 
 function date2String(date) {
   var options = {

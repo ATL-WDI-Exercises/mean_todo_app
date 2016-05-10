@@ -23,11 +23,11 @@ router.get('/', function(req, res, next) {
 
 // NEW
 router.get('/new', function(req, res, next) {
-  var newTodo = {
+  var todo = {
     title: '',
     completed: false
   };
-  res.render('todos/new', { todo: newTodo } );
+  res.render('todos/new', { todo: todo } );
 });
 
 // SHOW
@@ -44,10 +44,8 @@ router.get('/:id', function(req, res, next) {
 // CREATE
 router.post('/', function(req, res, next) {
   var todo = new Todo({
-    title:         req.body.title,
-    completed:     req.body.completed ? true : false
-    // createdAt:     Date.now(),
-    // lastUpdatedAt: Date.now()
+    title:     req.body.title,
+    completed: req.body.completed ? true : false
   });
   todo.save()
   .then(function(saved) {
@@ -75,7 +73,6 @@ router.put('/:id', function(req, res, next) {
     if (!todo) return next(makeError(res, 'Document not found', 404));
     todo.title = req.body.title;
     todo.completed = req.body.completed ? true : false;
-    // todo.lastUpdatedAt = Date.now();
     return todo.save();
   })
   .then(function(saved) {
