@@ -1,10 +1,3 @@
-<!--
-This file is auto-generated from a 'template.md'
-file using the 'md-process' script.
-Therefore *DO NOT* edit this file directly!
-Instead edit the template file and then run 'md-process'.
--->
-
 # A Simple TODO app using the MEAN Stack and the Express Generator
 
 This app was developed as part of the General Assembly WDI class in Atlanta, GA.
@@ -12,13 +5,7 @@ This app was developed as part of the General Assembly WDI class in Atlanta, GA.
 * Author: Dr. Mike Hopper
 * Date: May, 2016
 
-## Table of Contents
-
-* [Step 1 - Create the Project](#step-1---create-the-project)
-* [Step 2 - Create a model and seeds file](#step-2---create-a-model-and-seeds-file)
-* [Step 3 - Create the routes and controller logic for our 7 RESTfull endpoints](#step-3---create-the-routes-and-controller-logic-for-our-7-restfull-endpoints)
-* [Step 4 - Create the TODO Views](#step-4---create-the-todo-views)
-* [Lab Time](#lab-time)
+{{ TOC }}
 
 ## Step 1 - Create the Project
 
